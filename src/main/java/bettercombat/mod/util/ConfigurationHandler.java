@@ -117,6 +117,7 @@ public class ConfigurationHandler
 	public static boolean strippingBarkRequiresAnimation = false;
 	public static boolean cancelSpartanWeaponryFatigue = true;
 	public static int parryingItemDamage = 4;
+	public static boolean playerDamageRemovesIframes = true;
 	
 	/* KNOCKBACK ------------------------------------------------------------------------------------------------------------------ */
 
@@ -483,7 +484,8 @@ public class ConfigurationHandler
 		strippingBarkRequiresAnimation = config.getBoolean("Stripping Bark Requires Animation", OTHER, false, "CURRENTLY NOT WORKING. If set to true, stripping bark requires an animation. Axes with a faster attack speed strip bark faster. Enable this setting if you have future MC installed which allows stripping of bark.");
 		cancelSpartanWeaponryFatigue = config.getBoolean("Cancel Spartan Weaponry Fatigue", OTHER, true, "Set to true to disable weapon fatigue from Spartan Weaponry, this mod instead handles two-handed and versatile weapons.");
 		parryingItemDamage = config.getInt("Parrying Item Damage", OTHER, 1, 0, 256, "How much damage is dealt to the weapon when an attack is parried.");
-		
+		ConfigurationHandler.playerDamageRemovesIframes = config.getBoolean("Player Damage Removes Target IFrames", OTHER, true, "Set to true to make player melee attacks ignore IFrames.");
+
 		/* --------------------------------------------------------------------------------------------------------------------- */
 		String KNOCKBACK = "Knockback";
 		

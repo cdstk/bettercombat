@@ -715,7 +715,7 @@ public class Helpers
 	/* Returns true if the player successfully attacked the victim */
 	private static boolean playerAttackedVictim(EntityPlayer player, EntityLivingBase victim, @Nullable MultiPartEntityPart bodyPart, float damage)
 	{
-		victim.hurtResistantTime = 0;
+		if(ConfigurationHandler.playerDamageRemovesIframes) victim.hurtResistantTime = 0;
 		
 		boolean attacked = false;
 		
@@ -737,7 +737,7 @@ public class Helpers
 		if ( attacked )
 		{
 			player.setLastAttackedEntity(victim);
-			victim.hurtResistantTime = 0;
+			if(ConfigurationHandler.playerDamageRemovesIframes) victim.hurtResistantTime = 0;
 		}
 		
 		return attacked;
